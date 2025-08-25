@@ -37,7 +37,7 @@ export default function Sidebar() {
       <div className="p-6 border-b border-border">
         <div className="flex flex-col items-center text-center">
           <Avatar className="w-20 h-20 mb-4 border-2 border-primary">
-            <AvatarImage src="/public/images/irfan.jpg" />
+            <AvatarImage src="/images/irfan.jpg" />
             <AvatarFallback>SB</AvatarFallback>
           </Avatar>
           <div className="space-y-2">
