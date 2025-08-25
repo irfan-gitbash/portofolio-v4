@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme base colors */
+    --background: 222 14% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 225 14% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 225 14% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 222 14% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 217 32% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 32% 17%;
+    --sidebar-ring: 142 76% 36%;
+
+    /* Custom gradient colors */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-card: linear-gradient(135deg, hsl(225 14% 8%), hsl(225 14% 12%));
+    --gradient-glow: 0 0 40px hsl(142 76% 36% / 0.3);
+    
+    /* Social media brand colors */
+    --instagram: 315 85% 55%;
+    --linkedin: 201 96% 32%;
+    --github: 210 11% 15%;
+    --gmail: 4 90% 58%;
+    --tiktok: 348 83% 47%;
+    
+    /* Technology icon colors */
+    --react: 193 95% 68%;
+    --vue: 153 48% 49%;
+    --angular: 348 86% 61%;
+    --typescript: 211 60% 45%;
+    --javascript: 45 93% 58%;
+    --golang: 191 91% 36%;
+    --python: 221 83% 53%;
+    --nodejs: 120 61% 34%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
