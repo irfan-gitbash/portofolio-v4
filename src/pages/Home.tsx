@@ -96,7 +96,7 @@ export default function Home() {
               Fullstack Developer
             </span>{" "}
             I’m a final-year Informatics Engineering student at Indraprasta PGRI
-            University with a GPA of 3.50{" "}
+            University with a GPA of 3.52.{" "}
             <span className="text-primary">
               Next.js, TypeScript, and Tailwind CSS,PHP with React, Vue, and
               Angular.
