@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useTheme } from "@/contexts/ThemeContext";
 import {
   Home,
   User,
@@ -15,6 +16,10 @@ import {
   Sparkles,
   Menu,
   X,
+  Sun,
+  Moon,
+  Monitor,
+  Palette,
 } from "lucide-react";
 import profileAvatar from "@/assets/profile-avatar.jpg";
 
@@ -26,6 +31,123 @@ const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: BarChart3 },
   { name: "Contact", href: "/contact", icon: Mail },
 ];
+
+const ThemeToggle = () => {
+  const { theme, setTheme, actualTheme } = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const themes = [
+    {
+      name: "Light",
+      value: "light" as const,
+      icon: Sun,
+      description: "Light mode",
+      gradient: "from-yellow-400 to-orange-500",
+    },
+    {
+      name: "Dark",
+      value: "dark" as const,
+      icon: Moon,
+      description: "Dark mode",
+      gradient: "from-slate-900 to-slate-700",
+    },
+    {
+      name: "System",
+      value: "system" as const,
+      icon: Monitor,
+      description: "Follow system",
+      gradient: "from-blue-500 to-purple-600",
+    },
+  ];
+
+  const currentTheme = themes.find((t) => t.value === theme) || themes[1];
+  const CurrentIcon = currentTheme.icon;
+
+  return (
+    <div className="relative">
+      <Button
+        variant="ghost"
+        size="sm"
+        onClick={() => setIsOpen(!isOpen)}
+        className={`w-full justify-start gap-3 h-10 px-3 transition-all duration-300 hover:scale-105 ${
+          isOpen
+            ? "bg-primary/10 text-primary border border-primary/20"
+            : "hover:bg-accent"
+        }`}
+      >
+        <div className="relative">
+          <CurrentIcon className="w-4 h-4 transition-transform duration-300" />
+          {actualTheme === "light" && (
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
+          )}
+          {actualTheme === "dark" && (
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+          )}
+        </div>
+        <span className="text-sm font-medium">Theme</span>
+        <div className="ml-auto flex items-center gap-1">
+          <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${currentTheme.gradient}`} />
+          <div className="w-1 h-4 bg-muted-foreground/30 rounded-full" />
+        </div>
+      </Button>
+
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setIsOpen(false)}
+          />
+          <Card className="absolute top-full left-0 right-0 mt-2 p-2 z-50 border border-border/50 shadow-xl backdrop-blur-sm bg-card/95">
+            <div className="space-y-1">
+              {themes.map((themeOption) => {
+                const Icon = themeOption.icon;
+                const isSelected = theme === themeOption.value;
+                return (
+                  <Button
+                    key={themeOption.value}
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => {
+                      setTheme(themeOption.value);
+                      setIsOpen(false);
+                    }}
+                    className={`w-full justify-start gap-3 h-10 transition-all duration-200 ${
+                      isSelected
+                        ? "bg-primary text-primary-foreground shadow-md"
+                        : "hover:bg-accent hover:scale-[1.02]"
+                    }`}
+                  >
+                    <div className="relative">
+                      <Icon className="w-4 h-4" />
+                      {isSelected && (
+                        <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary-foreground rounded-full" />
+                      )}
+                    </div>
+                    <div className="flex-1 text-left">
+                      <div className="text-sm font-medium">{themeOption.name}</div>
+                      <div className="text-xs text-muted-foreground">
+                        {themeOption.description}
+                      </div>
+                    </div>
+                    <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${themeOption.gradient} opacity-70`} />
+                  </Button>
+                );
+              })}
+            </div>
+            <div className="mt-2 pt-2 border-t border-border/50">
+              <div className="flex items-center gap-2 px-3 py-2">
+                <Palette className="w-3 h-3 text-muted-foreground" />
+                <span className="text-xs text-muted-foreground">
+                  Current: {actualTheme === "light" ? "☀️ Light" : "🌙 Dark"}
+                </span>
+              </div>
+            </div>
+          </Card>
+        </>
+      )}
+    </div>
+  );
+};
 
 export default function Sidebar() {
   const location = useLocation();
@@ -85,6 +207,11 @@ export default function Sidebar() {
           );
         })}
       </nav>
+
+      {/* Theme Toggle */}
+      <div className="p-4 border-t border-border">
+        <ThemeToggle />
+      </div>
 
       {/* Smart Talk Button */}
       <div className="p-4 border-t border-border">

@@ -8,6 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Light theme base colors */
+    --background: 0 0% 100%;
+    --foreground: 222 14% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 14% 6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 14% 6%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 14% 6%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 14% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 14% 6%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 14% 6%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 142 76% 36%;
+
+    /* Custom gradient colors */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-glow: 0 0 40px hsl(142 76% 36% / 0.2);
+  }
+
+  .dark {
     /* Dark theme base colors */
     --background: 222 14% 6%;
     --foreground: 210 40% 98%;
@@ -37,8 +85,6 @@ All colors MUST be HSL.
     --input: 217 32% 17%;
     --ring: 142 76% 36%;
 
-    --radius: 0.75rem;
-
     /* Sidebar colors */
     --sidebar-background: 222 14% 6%;
     --sidebar-foreground: 210 40% 98%;
@@ -53,32 +99,55 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
     --gradient-card: linear-gradient(135deg, hsl(225 14% 8%), hsl(225 14% 12%));
     --gradient-glow: 0 0 40px hsl(142 76% 36% / 0.3);
-    
-    /* Social media brand colors */
-    --instagram: 315 85% 55%;
-    --linkedin: 201 96% 32%;
+  }
+
+  /* Social media brand colors */
+  :root {
+    --instagram: 315 100% 72%;
+    --linkedin: 201 100% 35%;
     --github: 210 11% 15%;
     --gmail: 4 90% 58%;
     --tiktok: 348 83% 47%;
-    
-    /* Technology icon colors */
+
+    /* Technology colors */
     --react: 193 95% 68%;
-    --vue: 153 48% 49%;
+    --vue: 153 47% 49%;
     --angular: 348 86% 61%;
     --typescript: 211 60% 45%;
-    --javascript: 45 93% 58%;
+    --javascript: 45 93% 47%;
     --golang: 191 91% 36%;
-    --python: 221 83% 53%;
-    --nodejs: 120 61% 34%;
+    --python: 48 94% 68%;
+    --nodejs: 120 100% 31%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }

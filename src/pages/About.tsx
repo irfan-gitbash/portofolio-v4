@@ -86,8 +86,8 @@ const experiences = [
 
 const handleDownloadCV = () => {
   const link = document.createElement("a");
-  link.href = "/cv/CV ATS Muhammad Irfan Suherman.pdf";
-  link.download = "CV ATS Muhammad Irfan Suherman.pdf";
+  link.href = "/cv/CV ATS .pdf";
+  link.download = "CV ATS .pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
