@@ -18,7 +18,7 @@ const experiences = [
   {
     title: "Freelance Full Stack Web Developer",
     location: "Jakarta, Indonesia 🇮🇩",
-    period: "April 2025 - Agustus 2025",
+    period: "April 2025 - September 2025",
     duration: "5 Months",
     status: "Remote",
     logo: "🚀",
@@ -121,42 +121,19 @@ export default function About() {
       <section className="space-y-6">
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Hello there! Thank you for visiting my personal website. I'm{" "}
-            <span className="text-primary font-semibold">Muhammad irfan</span>,
-            I’m a final-year Informatics Engineering student at Indraprasta PGRI
-            University with a GPA of 3.52{" "}
-            <span className="text-primary">Fullstack Developer</span> with a
-            passion for building impactful software products. My stack includes
-            modern frontend technologies like{" "}
-            <span className="text-primary">
-              Next.js, TypeScript, and Tailwind CSS,PHP with React, Vue, and
-              Angular, Python
-            </span>
-            , as well as backend development using{" "}
-            <span className="text-primary">I have worked</span>. as a Freelance
-            Full Stack Web Developer{" "}
+            Final-year informatics engineering student at indraprasta pgri
+            university (gpa 3.52) with strong expertise in full-stack web
+            development. Experienced as a frontend developer at pt bank negara
+            indonesia (bni) and as a freelance full stack developer,
+            contributing to large-scale digital projects and custom
+            applications. Skilled in laravel (php), react.js, next.js,
+            tailwindcss, bootstrap, and mysql, with additional experience in
+            python and java for decision support systems and predictive
+            analytics. Passionate about building scalable, data-driven, and
+            user-friendly applications, with proven strengths in ui/ux design,
+            api integration, system optimization, and decision support systems
+            (dss).
           </p>
-
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Most recently, I worked as a Frontend Web Developer at PT Bank
-            Negara Indonesia (Persero) Tbk, where I contributed to large-scale
-            government technology projects under the Wholesale Digital Delivery
-            division Juli 2024 - February 2025
-          </p>
-
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            I have worked as a Freelance Full Stack Web Developer success in
-            software development. An Audit Management System for Bank Neo
-            Commerce (Phase 1), built with React.js, Redux, and Axios to improve
-            audit efficiency and transparency. A real-time skincare
-            recommendation dashboard powered by native PHP, TailwindCSS, and
-            JavaScript, providing personalized results through dynamic criteria
-            management. Several decision-support systems (DSS) including school
-            selection systems and Analytical Hierarchy Process (AHP) dashboards,
-            integrating structured logic, automated scoring, and report
-            generation.
-          </p>
-
           <div className="pt-4">
             <p className="text-primary font-script text-2xl">Muhammad Irfan</p>
           </div>

@@ -91,26 +91,18 @@ export default function Home() {
 
         <div className="prose prose-invert max-w-4xl">
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Experienced and passionate{" "}
-            <span className="text-primary font-semibold">
-              Fullstack Developer
-            </span>{" "}
-            I’m a final-year Informatics Engineering student at Indraprasta PGRI
-            University with a GPA of 3.52.{" "}
-            <span className="text-primary">
-              Next.js, TypeScript, and Tailwind CSS,PHP with React, Vue, and
-              Angular.
-            </span>{" "}
-            specializing in web and mobile application development. I have
-            hands-on experience delivering scalable, responsive, and data-driven
-            applications using modern technologies such as React.js, Next.js,
-            TailwindCSS, and native PHP,{" "}
-            <span className="text-primary">Most recently,</span>, II worked as a
-            Frontend Web Developer at PT Bank Negara Indonesia (Persero) Tbk,
-            <span className="text-primary">
-              Wholesale Digital Delivery division.
-            </span>
-            .I have worked as a Freelance Full Stack Web Developer
+            Final-year informatics engineering student at indraprasta pgri
+            university (gpa 3.52) with strong expertise in full-stack web
+            development. Experienced as a frontend developer at pt bank negara
+            indonesia (bni) and as a freelance full stack developer,
+            contributing to large-scale digital projects and custom
+            applications. Skilled in laravel (php), react.js, next.js,
+            tailwindcss, bootstrap, and mysql, with additional experience in
+            python and java for decision support systems and predictive
+            analytics. Passionate about building scalable, data-driven, and
+            user-friendly applications, with proven strengths in ui/ux design,
+            api integration, system optimization, and decision support systems
+            (dss).
           </p>
         </div>
       </section>
