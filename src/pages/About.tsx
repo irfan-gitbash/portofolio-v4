@@ -19,7 +19,7 @@ const experiences = [
     title: "Freelance Full Stack Web Developer",
     location: "Jakarta, Indonesia 🇮🇩",
     period: "April 2025 - September 2025",
-    duration: "5 Months",
+    duration: "6 Months",
     status: "Remote",
     logo: "🚀",
     description:
@@ -33,9 +33,9 @@ const experiences = [
   {
     title: "Frontend Web Developer",
     company: "PT. Bank Indonesia TBK.",
-    location: "Jakarta, Indonesia 🇮🇩",
-    period: "Juli 2024 - Februari 2025",
-    duration: "8 Months",
+    location: "Jakarta, Indonesiaad 🇮🇩",
+    period: "Aug 2024 - Februari 2025",
+    duration: "7 Months",
     type: "Kontrak",
     status: "Onsite",
     logo: "💻",
